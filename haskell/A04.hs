@@ -17,4 +17,4 @@ toBin 0 = ""
 toBin x = reverse $ toBin' x
     where
         toBin' 0 = ""
-        toBin' y = show (mod y 2) ++ toBin' (div y 2)
+        toBin' y = let (r, q) = divMod y 2 in  show q ++ toBin' r
